@@ -3,6 +3,7 @@ require('dotenv').config();
 async function main() {
   const {
     HEX_PRIVATE_KEY,
+    TARGET_OWNER,
     TOKEN_NAME,
     TOKEN_SYMBOL,
     TOKEN_INITIAL_SUPPLY,
@@ -14,7 +15,10 @@ async function main() {
     TOKEN_NAME,
     TOKEN_SYMBOL,
     TOKEN_INITIAL_SUPPLY,
+    TARGET_OWNER,
   );
+
+  console.log("Deploying FCLToken...")
 
   await fclToken.deployed();
 

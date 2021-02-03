@@ -34,13 +34,14 @@ contract FCLToken is Context, AccessControl, ERC20Burnable, ERC20Pausable {
     constructor(
       string memory name,
       string memory symbol,
-      uint256 initialSupply
+      uint256 initialSupply,
+      address targetOwner
     ) public ERC20(name, symbol) {
-        _setupRole(DEFAULT_ADMIN_ROLE, _msgSender());
+        _setupRole(DEFAULT_ADMIN_ROLE, targetOwner);
 
-        _setupRole(PAUSER_ROLE, _msgSender());
+        _setupRole(PAUSER_ROLE, targetOwner);
 
-        _mint(_msgSender(), initialSupply);
+        _mint(targetOwner, initialSupply);
     }
 
     /**
