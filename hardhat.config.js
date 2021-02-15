@@ -1,4 +1,5 @@
 require("@nomiclabs/hardhat-waffle");
+require("@nomiclabs/hardhat-etherscan");
 require('dotenv').config();
 
 // You need to export an object to set up your config
@@ -8,6 +9,9 @@ require('dotenv').config();
  * @type import('hardhat/config').HardhatUserConfig
  */
 module.exports = {
+  etherscan: {
+    apiKey: process.env.ETHERSCAN_API_KEY,
+  },
   networks: {
     mainnet: {
       accounts: [process.env.HEX_PRIVATE_KEY],
@@ -26,5 +30,5 @@ module.exports = {
         runs: 200,
       },
     },
-  }
+  },
 };

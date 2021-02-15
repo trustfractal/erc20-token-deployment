@@ -21,3 +21,10 @@ contract = new ethers.Contract(address, abi, signer)
 contract.pause()
 contact.unpause()
 ```
+
+## Verifying in Etherscan
+
+Uses [Hardhat's Etherscan plugin](https://github.com/nomiclabs/hardhat/tree/master/packages/hardhat-etherscan).
+
+1. Set `ETHERSCAN_API_KEY` in your `.env` file
+2. Run ```npx hardhat verify --network <rinkeby|mainnet> <contract address> "<TOKEN_NAME>" "<TOKEN_SYMBOL>" "<TOKEN_INITIAL_SUPPLY>" "<TARGET_OWNER>"```
